@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Watchlist</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navigation">
+        <% if user_signed_in? %>
+          <%= link_to "Watchlist", "/" %>
+          <%= link_to "Alerts", "/alerts" %>
+          <%= link_to "Email", "#" %>
+          <%= link_to "Sign out", destroy_user_session_path %>
+        <% end %>
+      </nav>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>
