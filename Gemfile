@@ -74,7 +74,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'vcr', '~> 6.1.0'
-   gem 'webmock', '~> 3.14.0'
+  gem 'webmock', '~> 3.14.0'
 end
 
 gem 'rubocop', '~> 1.26', require: false
