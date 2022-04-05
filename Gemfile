@@ -76,3 +76,6 @@ group :test do
 end
 
 gem 'rubocop', '~> 1.26', require: false
+gem 'sidekiq', '~> 6.4.1'
+gem 'nokogiri', '~> 1.13.3'
+gem 'httparty', '~> 0.20.0'
