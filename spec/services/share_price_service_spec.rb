@@ -6,12 +6,12 @@ RSpec.describe SharePriceService, type: :service do
   describe 'get stock price' do
     context 'in a web page' do
       it 'should return actual price', :vcr do
-        price = VCR.use_cassette(stock) { SharePriceService.new(stock).get_share_price }
+        price = VCR.use_cassette('petr4') { SharePriceService.new(stock).get_share_price }
         expect(price).to eq(3257.0)
       end
 
-      it 'should return actual price', :vcr do
-        price = VCR.use_cassette(stock) { SharePriceService.new(invalid_stock).get_share_price }
+      it 'should return an error', :vcr do
+        price = VCR.use_cassette('petr4') { SharePriceService.new(invalid_stock).get_share_price }
         expect { price }.to rescue(StandardError)
       end
     end
