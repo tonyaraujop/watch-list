@@ -75,6 +75,7 @@ group :test do
   gem "webdrivers"
   gem 'vcr', '~> 6.1.0'
   gem 'webmock', '~> 3.14.0'
+  gem 'rspec-sidekiq', '~> 3.1.0'
 end
 
 gem 'rubocop', '~> 1.26', require: false
