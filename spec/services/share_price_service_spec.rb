@@ -11,7 +11,7 @@ RSpec.describe SharePriceService, type: :service do
       end
 
       it 'should return an error', :vcr do
-        price = VCR.use_cassette('petr4') { SharePriceService.new(invalid_stock).get_share_price }
+        price = VCR.use_cassette('invalid_stock') { SharePriceService.new(invalid_stock).get_share_price }
         expect { price }.to rescue(StandardError)
       end
     end
