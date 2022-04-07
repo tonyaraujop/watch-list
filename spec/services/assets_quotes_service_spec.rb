@@ -20,7 +20,7 @@ RSpec.describe AssetsQuotesService, type: :service do
     end
 
     context "when don't have asset on wallet" do
-      it 'watch list asset has queue critical' do
+      it 'watch list asset has queue default' do
         expect(SharePriceJob).to receive(:set).with({queue: :default}).and_call_original
         AssetsQuotesService.new.update_assets_quotes
         expect(SharePriceJob).to have_enqueued_sidekiq_job(petr4.symbol)
